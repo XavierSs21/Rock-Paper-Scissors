@@ -1,4 +1,4 @@
-const playRound = ({ humanChoice, computerChoice }) => {
+const playRound = (humanChoice, computerChoice) => {
     console.log(`Your choice: ${humanChoice}`);
     console.log(`Computer choice: ${computerChoice}`);
     
@@ -16,7 +16,7 @@ const playRound = ({ humanChoice, computerChoice }) => {
         return "Human";
     }    
 
-    console.log(`You loose! ${computerChoice} defeats ${humanChoice}`);
+    console.log(`You lose! ${computerChoice} defeats ${humanChoice}`);
     return 'Computer';
 }
 
@@ -30,14 +30,14 @@ const getHumanChoice = () => {
     return choice;
 }
 
-const getComputerChoice = ({ humanChoice, computerChoice }) => {
+const getComputerChoice = () => {
     const choices = ['rock', 'paper', 'scissors']
     const randomIndex = Math.floor(Math.random() * 3)
     
     return choices[randomIndex];
 }
 
-const humanSelection = getHumanChoice();
+const humanChoice = getHumanChoice();
 const computerSelection = getComputerChoice();
 
-playRound(humanSelection, computerSelection);
+playRound(humanChoice, computerSelection);
