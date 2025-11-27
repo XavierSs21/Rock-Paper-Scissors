@@ -1,4 +1,23 @@
-function playRound(humanChoice, computerChoice) {
+const playRound = ({ humanChoice, computerChoice }) => {
+    console.log(`Your choice: ${humanChoice}`);
+    console.log(`Computer choice: ${computerChoice}`);
+    
+    if(computerChoice === humanChoice){
+        console.log('Tie');
+        return 'Tie'
+    }
+
+    if (
+        (humanChoice === 'rock' && computerChoice === 'scissors') ||
+        (humanChoice === 'paper' && computerChoice === 'rock') ||
+        (humanChoice === 'scissors' && computerChoice === 'paper')
+    ) {
+        console.log(`You win! ${humanChoice} defeats ${computerChoice}`);
+        return "Human";
+    }    
+
+    console.log(`You loose! ${computerChoice} defeats ${humanChoice}`);
+    return 'Computer';
 }
 
 const getHumanChoice = () => {
